@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- =====================================================================
+       SEO — ✏️ À PERSONNALISER pour chaque client
+       ===================================================================== -->
+  <title>Maison Dorée — Boulangerie artisanale | Site de démonstration</title>
+  <meta name="description" content="Maison Dorée, boulangerie artisanale fictive : pains au levain, viennoiseries pur beurre et pâtisseries faites maison. Site vitrine de démonstration.">
+  <meta name="author" content="Maison Dorée (démonstration)">
+  <meta name="theme-color" content="#3A2921">
+
+  <!-- DÉMONSTRATION : la page n'est pas indexée par les moteurs de recherche,
+       afin qu'aucune information fictive n'apparaisse dans Google.
+       ➜ Pour un vrai client : remplacez par <meta name="robots" content="index, follow"> -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Adresse canonique : ➜ remplacez par l'URL définitive du site -->
+  <!-- <link rel="canonical" href="https://www.exemple-boulangerie.fr/"> -->
+
+  <!-- Open Graph (aperçu lors d'un partage sur les réseaux / messageries).
+       ➜ Après mise en ligne, remplacez og:image et og:url par des URL complètes
+         (ex. https://votre-pseudo.github.io/maison-doree/images/og-image.jpg) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Maison Dorée">
+  <meta property="og:title" content="Maison Dorée — Boulangerie artisanale">
+  <meta property="og:description" content="Le goût du bon, le plaisir du fait maison. Pains, viennoiseries et pâtisseries préparés chaque jour. (Boulangerie fictive — site de démonstration)">
+  <meta property="og:image" content="images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Maison Dorée, boulangerie artisanale">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicons -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <!-- Performance : connexion anticipée au serveur des photos + préchargement
+       de la photo d'accueil et des polices principales -->
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1676955757444-2a1a0225c7f6?auto=format&fit=crop&w=1920&q=72"
+        imagesrcset="https://images.unsplash.com/photo-1676955757444-2a1a0225c7f6?auto=format&fit=crop&w=800&q=72 800w,
+                     https://images.unsplash.com/photo-1676955757444-2a1a0225c7f6?auto=format&fit=crop&w=1280&q=72 1280w,
+                     https://images.unsplash.com/photo-1676955757444-2a1a0225c7f6?auto=format&fit=crop&w=1920&q=72 1920w"
+        imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" href="fonts/crimson-text-regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/dm-sans-variable.woff" as="font" type="font/woff" crossorigin>
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Active les animations avant le premier affichage (évite un clignotement) -->
+  <script>document.documentElement.classList.add("js");</script>
+
+  <!-- Données structurées (schema.org).
+       DÉMONSTRATION : on décrit uniquement une page web de démonstration,
+       sans adresse ni téléphone, pour ne créer aucune fausse fiche locale.
+       ➜ Pour un vrai client, voir le modèle « Bakery » dans le README. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Maison Dorée — Site de démonstration",
+    "description": "Site vitrine de démonstration pour une boulangerie artisanale fictive.",
+    "inLanguage": "fr-FR",
+    "isFamilyFriendly": true
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- =====================================================================
+       A. EN-TÊTE / NAVIGATION
+       ===================================================================== -->
+  <header class="header" id="header">
+    <!-- Bandeau de démonstration (masqué automatiquement si isDemo = false dans js/config.js) -->
+    <div class="demo-banner demo-only" role="note">
+      <span class="demo-banner__dot" aria-hidden="true"></span>
+      <span class="demo-banner__long">Site de démonstration — Maison Dorée est une boulangerie fictive. Adresse, téléphone et prix sont des exemples.</span>
+      <span class="demo-banner__short">Site de démonstration · boulangerie fictive</span>
+    </div>
+    <div class="container header__inner">
+      <a class="logo" href="#accueil" aria-label="Maison Dorée, retour à l'accueil">
+        <span class="logo__mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="30" height="30"><use href="#icon-wheat"/></svg>
+        </span>
+        <span class="logo__text">
+          <span class="logo__name" data-bind="name">Maison Dorée</span>
+          <span class="logo__sub">Boulangerie · Pâtisserie</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#accueil">Accueil</a></li>
+          <li><a class="nav__link" href="#histoire">Notre histoire</a></li>
+          <li><a class="nav__link" href="#produits">Nos produits</a></li>
+          <li><a class="nav__link" href="#engagements">Nos engagements</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+        <a class="btn btn--gold nav__cta" href="#infos">Nous trouver</a>
+      </nav>
+
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+        <span class="burger__bar"></span>
+        <span class="burger__bar"></span>
+        <span class="burger__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- ===================================================================
+         B. HERO
+         ✏️ PHOTO D'ACCUEIL : modifiez src / srcset ci-dessous (et le
+            <link rel="preload"> dans le <head>) pour changer l'image.
+         =================================================================== -->
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="hero__media">
+        <img class="hero__img"
+             src="https://images.unsplash.com/photo-1676955757444-2a1a0225c7f6?auto=format&fit=crop&w=1920&q=72"
+             srcset="https://images.unsplash.com/photo-1676955757444-2a1a0225c7f6?auto=format&fit=crop&w=800&q=72 800w,
+                     https://images.unsplash.com/photo-1676955757444-2a1a0225c7f6?auto=format&fit=crop&w=1280&q=72 1280w,
+                     https://images.unsplash.com/photo-1676955757444-2a1a0225c7f6?auto=format&fit=crop&w=1920&q=72 1920w"
+             sizes="100vw"
+             alt="Étals d'une boulangerie artisanale garnis de pains et de viennoiseries"
+             width="1920" height="1280" fetchpriority="high" decoding="async">
+      </div>
+
+      <div class="container hero__content">
+        <p class="eyebrow eyebrow--light reveal">Boulangerie artisanale française</p>
+        <h1 class="hero__title reveal" id="hero-title" data-bind="slogan">Le goût du bon, le plaisir du fait maison.</h1>
+        <p class="hero__lead reveal">
+          Chaque jour, nous préparons avec passion des pains, viennoiseries et pâtisseries
+          qui célèbrent le savoir-faire artisanal.
+        </p>
+        <div class="hero__actions reveal">
+          <a class="btn btn--gold" href="#produits">Découvrir nos produits</a>
+          <a class="btn btn--ghost-light" href="#infos">
+            <svg class="btn__icon" aria-hidden="true"><use href="#icon-pin"/></svg>
+            Nous trouver
+          </a>
+        </div>
+
+        <!-- Statut d'ouverture calculé en direct à partir des horaires (js/config.js) -->
+        <p class="hero__status reveal" aria-live="polite">
+          <span class="status" data-open-status>
+            <span class="status__dot" aria-hidden="true"></span>
+            <span class="status__text">Horaires : mardi – dimanche</span>
+          </span>
+        </p>
+      </div>
+
+      <a class="hero__scroll" href="#histoire" aria-label="Défiler vers Notre histoire">
+        <span aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ===================================================================
+         C. NOTRE HISTOIRE
+         ✏️ TEXTES & PHOTOS À PERSONNALISER (aucune date ni récompense inventée)
+         =================================================================== -->
+    <section class="section story" id="histoire" aria-labelledby="histoire-title">
+      <div class="container">
+
+        <div class="story__row">
+          <div class="story__text reveal">
+            <p class="eyebrow">Notre histoire</p>
+            <h2 class="section-title" id="histoire-title">Une maison de quartier, un métier de passion</h2>
+            <p>
+              Maison Dorée est née d'une idée simple : redonner au pain du quotidien
+              le temps et l'attention qu'il mérite. Derrière le comptoir, une petite
+              équipe de boulangers et de pâtissiers qui aiment leur métier et le
+              partagent avec les habitants du quartier.
+            </p>
+            <p>
+              Ici, rien n'est industriel. Les pâtes sont pétries, façonnées et cuites
+              sur place, au rythme des fermentations naturelles. Une méthode plus lente,
+              qui donne des pains plus savoureux et qui se conservent mieux.
+            </p>
+            <ul class="story__points">
+              <li><svg aria-hidden="true"><use href="#icon-check"/></svg>Levain naturel entretenu chaque jour</li>
+              <li><svg aria-hidden="true"><use href="#icon-check"/></svg>Façonnage à la main, cuisson sur place</li>
+              <li><svg aria-hidden="true"><use href="#icon-check"/></svg>Recettes simples et ingrédients choisis</li>
+            </ul>
+          </div>
+          <figure class="story__media story__media--offset reveal">
+            <img src="https://images.unsplash.com/flagged/photo-1561668038-2742fcef75d7?auto=format&fit=crop&w=1000&q=72"
+                 srcset="https://images.unsplash.com/flagged/photo-1561668038-2742fcef75d7?auto=format&fit=crop&w=600&q=72 600w,
+                         https://images.unsplash.com/flagged/photo-1561668038-2742fcef75d7?auto=format&fit=crop&w=1000&q=72 1000w"
+                 sizes="(max-width: 900px) 100vw, 50vw"
+                 alt="Boulanger pétrissant une pâte sur un plan de travail fariné"
+                 width="1000" height="1250" loading="lazy" decoding="async">
+          </figure>
+        </div>
+
+        <div class="story__row story__row--reverse">
+          <div class="story__text reveal">
+            <p class="eyebrow">Le savoir-faire</p>
+            <h3 class="section-subtitle">Des ingrédients choisis, une fabrication quotidienne</h3>
+            <p>
+              Nous sélectionnons nos farines, notre beurre et nos fruits avec soin,
+              en privilégiant des produits de qualité et de saison. Ce sont eux qui
+              donnent à chaque fournée son goût et son caractère.
+            </p>
+            <p>
+              Dès l'aube, le fournil s'anime : baguettes, miches, croissants et
+              pâtisseries sont préparés chaque jour, en petites quantités, pour vous
+              être proposés au meilleur de leur fraîcheur.
+            </p>
+            <a class="link-arrow" href="#produits">Voir nos produits
+              <svg aria-hidden="true"><use href="#icon-arrow"/></svg>
+            </a>
+          </div>
+          <figure class="story__media reveal">
+            <img src="https://images.unsplash.com/photo-1595801105145-795f1927c0fc?auto=format&fit=crop&w=1000&q=72"
+                 srcset="https://images.unsplash.com/photo-1595801105145-795f1927c0fc?auto=format&fit=crop&w=600&q=72 600w,
+                         https://images.unsplash.com/photo-1595801105145-795f1927c0fc?auto=format&fit=crop&w=1000&q=72 1000w"
+                 sizes="(max-width: 900px) 100vw, 50vw"
+                 alt="Mains travaillant une pâte farinée dans la lumière du matin"
+                 width="1000" height="1250" loading="lazy" decoding="async">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         D. NOS PRODUITS — les cartes sont générées depuis js/config.js
+         =================================================================== -->
+    <section class="section section--cream products" id="produits" aria-labelledby="produits-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Nos produits</p>
+          <h2 class="section-title" id="produits-title">Du fournil à votre table</h2>
+          <p class="section-intro">
+            Pains, viennoiseries et pâtisseries : une sélection de nos créations,
+            préparées chaque jour dans notre atelier.
+          </p>
+        </header>
+
+        <div class="tabs reveal" role="group" aria-label="Filtrer les produits par catégorie" data-product-tabs>
+          <button class="tabs__btn is-active" type="button" data-filter="all" aria-pressed="true">Tout voir</button>
+          <!-- Les autres boutons sont ajoutés automatiquement à partir des catégories -->
+        </div>
+
+        <div class="product-grid" data-product-grid aria-live="polite">
+          <noscript>
+            <p class="noscript-note">Activez JavaScript pour afficher la sélection de produits.</p>
+          </noscript>
+        </div>
+
+        <p class="price-note">
+          <svg aria-hidden="true"><use href="#icon-info"/></svg>
+          <span data-bind="priceNote">Prix indicatifs, donnés à titre d'exemple pour la démonstration.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         E. NOS ENGAGEMENTS
+         ✏️ TEXTES À PERSONNALISER — ce sont des engagements de la maison,
+            pas des labels ni des certifications.
+         =================================================================== -->
+    <section class="section section--dark commitments" id="engagements" aria-labelledby="engagements-title">
+      <div class="container">
+        <header class="section-head section-head--light reveal">
+          <p class="eyebrow eyebrow--light">Nos engagements</p>
+          <h2 class="section-title" id="engagements-title">Ce qui fait notre différence</h2>
+          <p class="section-intro">
+            Quatre principes simples qui guident notre travail, de la première
+            fournée à la dernière.
+          </p>
+        </header>
+
+        <ul class="commitments__grid">
+          <li class="commitment reveal">
+            <span class="commitment__icon" aria-hidden="true"><svg><use href="#icon-wheat"/></svg></span>
+            <h3 class="commitment__title">Savoir-faire artisanal</h3>
+            <p>Des gestes de boulanger transmis et pratiqués chaque jour : pétrissage, pointage, façonnage et cuisson.</p>
+          </li>
+          <li class="commitment reveal">
+            <span class="commitment__icon" aria-hidden="true"><svg><use href="#icon-hands"/></svg></span>
+            <h3 class="commitment__title">Produits préparés avec soin</h3>
+            <p>Chaque pièce est travaillée à la main, en petites séries, avec l'attention du détail.</p>
+          </li>
+          <li class="commitment reveal">
+            <span class="commitment__icon" aria-hidden="true"><svg><use href="#icon-leaf"/></svg></span>
+            <h3 class="commitment__title">Ingrédients sélectionnés</h3>
+            <p>Farines, beurre, fruits et chocolat choisis pour leur goût, en privilégiant la saison.</p>
+          </li>
+          <li class="commitment reveal">
+            <span class="commitment__icon" aria-hidden="true"><svg><use href="#icon-sun"/></svg></span>
+            <h3 class="commitment__title">Fraîcheur au quotidien</h3>
+            <p>Plusieurs fournées par jour pour vous proposer des produits qui sortent tout juste du four.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         F. GALERIE — photos générées depuis js/config.js
+         =================================================================== -->
+    <section class="section gallery" id="galerie" aria-labelledby="galerie-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Galerie</p>
+          <h2 class="section-title" id="galerie-title">Un aperçu de notre maison</h2>
+        </header>
+        <ul class="gallery__grid" data-gallery-grid></ul>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         G. HORAIRES & INFORMATIONS PRATIQUES
+         Les valeurs proviennent de js/config.js (texte par défaut ci-dessous
+         affiché si JavaScript est désactivé).
+         =================================================================== -->
+    <section class="section section--cream info" id="infos" aria-labelledby="infos-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Infos pratiques</p>
+          <h2 class="section-title" id="infos-title">Venir nous rendre visite</h2>
+        </header>
+
+        <div class="info__grid">
+          <div class="info-card reveal">
+            <div class="info-card__head">
+              <h3 class="info-card__title">
+                <svg aria-hidden="true"><use href="#icon-clock"/></svg>
+                Horaires d'ouverture
+              </h3>
+              <span class="status status--dark" data-open-status>
+                <span class="status__dot" aria-hidden="true"></span>
+                <span class="status__text"></span>
+              </span>
+            </div>
+            <table class="hours" data-hours-table>
+              <caption class="sr-only">Horaires d'ouverture de la semaine</caption>
+              <tbody>
+                <tr><th scope="row">Lundi</th><td>Fermé</td></tr>
+                <tr><th scope="row">Mardi – samedi</th><td>7h00 – 19h30</td></tr>
+                <tr><th scope="row">Dimanche</th><td>7h30 – 13h00</td></tr>
+              </tbody>
+            </table>
+
+            <div class="info-card__divider"></div>
+
+            <dl class="info-list">
+              <div class="info-list__item">
+                <dt><svg aria-hidden="true"><use href="#icon-pin"/></svg>Adresse</dt>
+                <dd>
+                  <span data-bind="address">12 rue des Artisans, 75000 Paris</span>
+                  <span class="badge-fictif demo-only">adresse fictive</span>
+                </dd>
+              </div>
+              <div class="info-list__item">
+                <dt><svg aria-hidden="true"><use href="#icon-phone"/></svg>Téléphone</dt>
+                <dd>
+                  <span data-bind="phoneDisplay">01 00 00 00 00</span>
+                  <span class="badge-fictif demo-only">numéro fictif</span>
+                </dd>
+              </div>
+            </dl>
+
+            <div class="info-card__actions">
+              <a class="btn btn--dark" href="tel:+33100000000" data-href="tel">
+                <svg class="btn__icon" aria-hidden="true"><use href="#icon-phone"/></svg>
+                Appeler
+              </a>
+              <a class="btn btn--outline" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.8566,2.3522"
+                 data-href="directions" target="_blank" rel="noopener">
+                <svg class="btn__icon" aria-hidden="true"><use href="#icon-route"/></svg>
+                Itinéraire
+              </a>
+            </div>
+          </div>
+
+          <div class="map reveal">
+            <iframe class="map__frame" data-map-frame
+                    title="Carte de localisation (démonstration)"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=2.3222%2C48.8456%2C2.3822%2C48.8676&amp;layer=mapnik"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p class="map__note demo-only">
+              <svg aria-hidden="true"><use href="#icon-info"/></svg>
+              Carte de démonstration : l'adresse affichée est fictive, aucun emplacement réel n'est indiqué.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         H. CONTACT
+         Le formulaire n'envoie rien sur un serveur (pas de backend) :
+         il prépare un e-mail dans la messagerie du visiteur.
+         =================================================================== -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact__grid">
+        <div class="contact__intro reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 class="section-title" id="contact-title">Une commande, une question ?</h2>
+          <p>
+            Gâteau d'anniversaire, plateau de viennoiseries pour un événement ou
+            simple question : appelez-nous ou écrivez-nous, nous vous répondrons
+            avec plaisir.
+          </p>
+
+          <ul class="contact-list">
+            <li>
+              <span class="contact-list__icon" aria-hidden="true"><svg><use href="#icon-phone"/></svg></span>
+              <span>
+                <span class="contact-list__label">Téléphone <span class="badge-fictif demo-only">fictif</span></span>
+                <a href="tel:+33100000000" data-href="tel" data-bind="phoneDisplay">01 00 00 00 00</a>
+              </span>
+            </li>
+            <li>
+              <span class="contact-list__icon" aria-hidden="true"><svg><use href="#icon-mail"/></svg></span>
+              <span>
+                <span class="contact-list__label">E-mail <span class="badge-fictif demo-only">fictif</span></span>
+                <a href="mailto:contact@maison-doree.example" data-href="mailto" data-bind="email">contact@maison-doree.example</a>
+              </span>
+            </li>
+            <li>
+              <span class="contact-list__icon" aria-hidden="true"><svg><use href="#icon-pin"/></svg></span>
+              <span>
+                <span class="contact-list__label">Adresse <span class="badge-fictif demo-only">fictive</span></span>
+                <span data-bind="address">12 rue des Artisans, 75000 Paris</span>
+              </span>
+            </li>
+            <li>
+              <span class="contact-list__icon" aria-hidden="true"><svg><use href="#icon-clock"/></svg></span>
+              <span>
+                <span class="contact-list__label">Horaires</span>
+                <span data-hours-summary>Mar.–sam. 7h00–19h30 · Dim. 7h30–13h00 · Fermé le lundi</span>
+              </span>
+            </li>
+          </ul>
+
+          <div class="contact__actions">
+            <a class="btn btn--dark" href="tel:+33100000000" data-href="tel">
+              <svg class="btn__icon" aria-hidden="true"><use href="#icon-phone"/></svg>
+              Appeler la boulangerie
+            </a>
+            <a class="btn btn--outline" href="mailto:contact@maison-doree.example" data-href="mailto">
+              <svg class="btn__icon" aria-hidden="true"><use href="#icon-mail"/></svg>
+              Écrire un e-mail
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <h3 class="contact-form__title">Envoyer un message</h3>
+          <p class="contact-form__hint">
+            <svg aria-hidden="true"><use href="#icon-info"/></svg>
+            Ce formulaire ne transmet rien à un serveur : il prépare votre message
+            dans votre logiciel de messagerie, vous n'avez plus qu'à l'envoyer.
+          </p>
+
+          <div class="field">
+            <label for="cf-name">Nom</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required>
+            <p class="field__error" id="cf-name-error"></p>
+          </div>
+          <div class="field">
+            <label for="cf-email">E-mail</label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" required>
+            <p class="field__error" id="cf-email-error"></p>
+          </div>
+          <div class="field">
+            <label for="cf-subject">Objet</label>
+            <select id="cf-subject" name="subject">
+              <option>Question générale</option>
+              <option>Commande spéciale</option>
+              <option>Événement / traiteur</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" required></textarea>
+            <p class="field__error" id="cf-message-error"></p>
+          </div>
+
+          <button class="btn btn--gold btn--block" type="submit">
+            Préparer l'e-mail
+            <svg class="btn__icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+          </button>
+          <p class="contact-form__status" role="status" aria-live="polite" data-form-status></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       I. FOOTER
+       ===================================================================== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="logo logo--light" href="#accueil" aria-label="Maison Dorée, retour à l'accueil">
+          <span class="logo__mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" width="30" height="30"><use href="#icon-wheat"/></svg>
+          </span>
+          <span class="logo__text">
+            <span class="logo__name" data-bind="name">Maison Dorée</span>
+            <span class="logo__sub">Boulangerie · Pâtisserie</span>
+          </span>
+        </a>
+        <p class="footer__desc" data-bind="shortDescription">
+          Boulangerie artisanale : pains au levain, viennoiseries pur beurre et
+          pâtisseries préparées chaque jour dans notre fournil.
+        </p>
+        <ul class="socials" data-socials aria-label="Réseaux sociaux"></ul>
+        <p class="footer__small demo-only">Liens sociaux de démonstration (pages d'accueil des plateformes).</p>
+      </div>
+
+      <nav class="footer__col" aria-label="Navigation du pied de page">
+        <h2 class="footer__title">Navigation</h2>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#histoire">Notre histoire</a></li>
+          <li><a href="#produits">Nos produits</a></li>
+          <li><a href="#engagements">Nos engagements</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__col">
+        <h2 class="footer__title">Coordonnées <span class="demo-only">(fictives)</span></h2>
+        <ul>
+          <li data-bind="address">12 rue des Artisans, 75000 Paris</li>
+          <li><a href="tel:+33100000000" data-href="tel" data-bind="phoneDisplay">01 00 00 00 00</a></li>
+          <li><a href="mailto:contact@maison-doree.example" data-href="mailto" data-bind="email">contact@maison-doree.example</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h2 class="footer__title">Horaires</h2>
+        <ul class="footer__hours" data-hours-footer>
+          <li><span>Mardi – samedi</span><span>7h00 – 19h30</span></li>
+          <li><span>Dimanche</span><span>7h30 – 13h00</span></li>
+          <li><span>Lundi</span><span>Fermé</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p class="demo-only"><strong>Site de démonstration — Maison Dorée est une boulangerie fictive.</strong></p>
+        <p>© <span data-year>2026</span> <span data-bind="name">Maison Dorée</span> · Photos : Unsplash (licence libre)</p>
+        <a class="footer__top" href="#accueil">Haut de page ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Visionneuse plein écran de la galerie -->
+  <dialog class="lightbox" id="lightbox" aria-label="Photo agrandie">
+    <button class="lightbox__close" type="button" aria-label="Fermer" data-lightbox-close>×</button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Photo précédente" data-lightbox-prev>‹</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" alt="" data-lightbox-img>
+      <figcaption class="lightbox__caption" data-lightbox-caption></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Photo suivante" data-lightbox-next>›</button>
+  </dialog>
+
+  <!-- =====================================================================
+       Bibliothèque d'icônes SVG (réutilisées via <use href="#icon-…">)
+       ===================================================================== -->
+  <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-wheat" viewBox="0 0 64 64">
+      <g fill="currentColor">
+        <rect x="30.8" y="14" width="2.4" height="44" rx="1.2"/>
+        <ellipse cx="32" cy="11" rx="3.4" ry="6"/>
+        <ellipse cx="27" cy="22" rx="3.1" ry="5.6" transform="rotate(-38 27 22)"/>
+        <ellipse cx="37" cy="22" rx="3.1" ry="5.6" transform="rotate(38 37 22)"/>
+        <ellipse cx="27" cy="31.5" rx="3.1" ry="5.6" transform="rotate(-38 27 31.5)"/>
+        <ellipse cx="37" cy="31.5" rx="3.1" ry="5.6" transform="rotate(38 37 31.5)"/>
+        <ellipse cx="27" cy="41" rx="3.1" ry="5.6" transform="rotate(-38 27 41)"/>
+        <ellipse cx="37" cy="41" rx="3.1" ry="5.6" transform="rotate(38 37 41)"/>
+      </g>
+    </symbol>
+    <symbol id="icon-hands" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 20.5s-7-4.3-7-9.6A3.9 3.9 0 0 1 12 8.6a3.9 3.9 0 0 1 7 2.3c0 5.3-7 9.6-7 9.6Z"/>
+      <path d="M9 3.5c.6.6.6 1.6 0 2.2M12 2.5c.6.6.6 1.6 0 2.2M15 3.5c.6.6.6 1.6 0 2.2"/>
+    </symbol>
+    <symbol id="icon-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15"/>
+      <path d="M5 19 13 11"/>
+    </symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <path d="M4 17h16M7 17a5 5 0 0 1 10 0"/>
+      <path d="M12 5v3M5.6 8.6l2 2M18.4 8.6l-2 2M3 13h2M19 13h2M7 20.5h10"/>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m5 12.5 4.5 4.5L19 7.5"/>
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12h14M13 6l6 6-6 6"/>
+    </symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/>
+    </symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 4h3.5l1.8 4.5-2.3 1.4a11 11 0 0 0 6.1 6.1l1.4-2.3L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.6A1.5 1.5 0 0 1 5 4Z"/>
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/>
+    </symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+      <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>
+    </symbol>
+    <symbol id="icon-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/>
+    </symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+      <circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.8v.2"/>
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-facebook" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3Z"/>
+    </symbol>
+    <symbol id="icon-google" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9L12 3.5Z"/>
+    </symbol>
+  </svg>
+
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

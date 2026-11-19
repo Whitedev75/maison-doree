@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Favicon Maison Dorée : épi de blé doré sur fond brun -->
+  <rect width="64" height="64" rx="14" fill="#3A2921"/>
+  <g fill="#C69A58">
+    <rect x="30.8" y="14" width="2.4" height="40" rx="1.2"/>
+    <ellipse cx="32" cy="13" rx="3.2" ry="5.5"/>
+    <g transform="translate(32 22)"><ellipse cx="-5" cy="0" rx="3" ry="5.4" transform="rotate(-38 -5 0)"/><ellipse cx="5" cy="0" rx="3" ry="5.4" transform="rotate(38 5 0)"/></g>
+    <g transform="translate(32 31)"><ellipse cx="-5" cy="0" rx="3" ry="5.4" transform="rotate(-38 -5 0)"/><ellipse cx="5" cy="0" rx="3" ry="5.4" transform="rotate(38 5 0)"/></g>
+    <g transform="translate(32 40)"><ellipse cx="-5" cy="0" rx="3" ry="5.4" transform="rotate(-38 -5 0)"/><ellipse cx="5" cy="0" rx="3" ry="5.4" transform="rotate(38 5 0)"/></g>
+  </g>
+</svg>
